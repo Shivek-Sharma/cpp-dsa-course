@@ -14,7 +14,7 @@ struct Node
 };
 */
 
-int findposition(int in[], int inOrderStart, int inOrderEnd, int element, int n)
+int findPosition(int in[], int inOrderStart, int inOrderEnd, int element)
 {
     for (int i = inOrderStart; i <= inOrderEnd; i++)
     {
@@ -39,7 +39,7 @@ Node *solve(int in[], int post[], int &index, int inOrderStart, int inOrderEnd, 
     Node *root = new Node(element);
 
     // find element's index in inorder
-    int position = findposition(in, inOrderStart, inOrderEnd, element, size);
+    int position = findPosition(in, inOrderStart, inOrderEnd, element);
 
     // recursive calls (we first build right subtree in postorder)
     root->right = solve(in, post, index, position + 1, inOrderEnd, size);

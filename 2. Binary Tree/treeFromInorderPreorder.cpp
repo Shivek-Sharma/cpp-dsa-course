@@ -12,7 +12,7 @@ struct Node
 class Solution
 {
 public:
-    int findposition(int in[], int inOrderStart, int inOrderEnd, int element, int n)
+    int findPosition(int in[], int inOrderStart, int inOrderEnd, int element)
     {
         for (int i = inOrderStart; i <= inOrderEnd; i++)
         {
@@ -37,7 +37,7 @@ public:
         Node *root = new Node(element);
 
         // find element's index in inorder
-        int position = findposition(in, inOrderStart, inOrderEnd, element, size);
+        int position = findPosition(in, inOrderStart, inOrderEnd, element);
 
         // recursive calls
         root->left = solve(in, pre, index, inOrderStart, position - 1, size);
