@@ -19,34 +19,36 @@ pair<int, int> predecessorSuccessor(TreeNode *root, int key)
 
     TreeNode *temp = root;
 
+    // finding predecessor
     while (temp != NULL)
     {
         if (key > temp->data)
         {
             // updating predecessor with each iteration
             predecessor = temp->data;
-            temp = temp->right; //to get max value
+            temp = temp->right; // to get max value
         }
-        else 
-        {   // left subtree
+        else
+        { // left subtree
             temp = temp->left;
         }
     }
 
     temp = root;
 
+    // finding successor
     while (temp != NULL)
     {
         if (key >= temp->data)
-        {   
+        {
             // right subtree
             temp = temp->right;
         }
         else
-        {   
+        {
             // updating successor with each iteration
             successor = temp->data;
-            temp = temp->left; //to get min value
+            temp = temp->left; // to get min value
         }
     }
 
